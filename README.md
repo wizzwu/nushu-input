@@ -1,83 +1,47 @@
-# 女书输入法：三平台离线安装工程
+# 女书输入法
 
-输入英文字母拼音，选择女书候选，输出标准 Unicode 女书字符。包含普通话拼音和江永方言拼音，支持原项目的 396 个女书字符。
+输入英文字母拼音，选择候选，输出标准 Unicode 女书字符。支持普通话拼音、江永方言拼音及原方案的 396 个女书字符；内置输入法程序、词典和 Noto Sans Nushu 字体，安装与首次部署无需联网。
 
-## 下载安装（0.1.0 试用版）
+## 下载安装
 
-| 平台 | 直接下载 | 目标设备 |
+当前版本：**0.1.0 试用版**。请按设备选择一个安装包。
+
+| 平台 | 下载安装包 | 适配目标 |
 |---|---|---|
-| Windows | [下载 Windows 安装包](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput-Setup.exe) | Windows 10/11，Intel/AMD 64 位 |
-| macOS | [下载 macOS 安装包](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput.pkg) | macOS 13+，Intel / Apple Silicon |
-| 安卓 | [下载安卓安装包](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput.apk) | Android 8+，ARM 32/64 位 |
+| Windows | [NushuInput-Setup.exe](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput-Setup.exe) | Windows 10/11，Intel/AMD 64 位 |
+| macOS | [NushuInput.pkg](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput.pkg) | macOS 13+，Intel / Apple Silicon |
+| 安卓 | [NushuInput.apk](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput.apk) | Android 8+，ARM 32/64 位 |
 
-[完整交付包（含说明、源码、许可和验证记录）](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput-delivery.zip) · [试用版发布页面](https://github.com/wizzwu/todo/releases/tag/v0.1.0-trial) · [SHA-256 校验清单](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/SHA256SUMS.txt)
+[查看发布页面及所有文件](https://github.com/wizzwu/todo/releases/tag/v0.1.0-trial) · [下载完整交付包](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput-delivery.zip) · [SHA-256 校验清单](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/SHA256SUMS.txt)
 
-安装与首次使用无需联网。输入英文字母拼音后选择女书候选；系统要求的授权、启用及切换输入法仍需确认。
+## 安装后怎么用
 
-**验证范围：**Mac 已在临时 macOS 环境通过安装、配置部署和 396 字输入引擎检查；安卓通过断网模拟器测试。Windows 干净系统安装及实体设备验收尚未完成。桌面安装器未做商业签名或苹果公证；安卓 16KB 内存页设备尚未验证。详情见[验证记录](docs/验证记录.md)。
+1. 安装对应文件，按系统提示授权并启用输入法；Mac 安装后需要退出账户并重新登录。
+2. 选择“女书·普通话拼音”，输入拼音后选字。另提供江永方言方案。
+3. 安卓点击“汉/女”键切换；桌面普通话方案按 `Ctrl+Shift+4` 切换汉字／女书。
 
-| 平台 | 产物 | 目标设备 |
+完整步骤、配置备份和错误日志位置见[使用说明](docs/使用说明.txt)。候选栏内置字体；复制到其他应用后能否显示女书，取决于目标应用的字体支持。
+
+## 试用版验证状态
+
+| 平台 | 已验证 | 尚未完成 |
 |---|---|---|
-| Windows | `dist/NushuInput-Setup.exe` | Windows 10/11，Intel/AMD x64 |
-| macOS | `dist/NushuInput.pkg` | macOS 13+，Intel/Apple Silicon |
-| Android | `dist/NushuInput.apk` | Android 8+，ARM32/ARM64 合并包 |
+| Windows | 云端构建、文件完整性、隔离输入引擎测试 | 干净系统完整安装及桌面使用验收 |
+| macOS | 临时 macOS 15 ARM64 环境系统安装、用户配置部署、396 字输入引擎测试 | 真实桌面会话、Intel 及 macOS 13 安装验收 |
+| 安卓 | 断网模拟器安装、首次部署、输入、切换、复制及覆盖安装 | 实体手机、Android 8 实机、16KB 内存页设备 |
 
-完整安装与首次部署无需联网。系统授权、启用键盘、添加输入法需要用户确认。
-桌面安装器未购买商业签名或苹果公证，适用于小范围试用。
-安装包存在不等于通过真机验证，具体结果见 `docs/验证记录.md`。
+桌面安装器未做商业签名或苹果公证。当前版本供试用，尚不能承诺所有适配目标都已安装即用。详见[验证记录](docs/验证记录.md)及[测试报告目录](reports/README.md)。
 
-## 构建
+## 资料与源码
 
-环境：Python 3.12+、Git、curl、7-Zip；安卓另需 JDK 17、Android SDK 35、Build Tools 35.0.0。
+| 资料 | 内容 |
+|---|---|
+| [使用说明](docs/使用说明.txt) | 安装、启用、输入、备份及故障日志 |
+| [验证记录](docs/验证记录.md) | 已测内容与未验证范围 |
+| [开发与构建](docs/开发与构建.md) | 本地构建、自动构建、安卓签名及工程目录 |
+| [第三方来源与许可](THIRD_PARTY_NOTICES.md) | 上游项目、组件版本及许可证 |
+| [固定来源清单](sources.lock.json) | 上游提交编号与下载校验值 |
 
-```text
-python -m pip install -r requirements.txt
-python scripts/prepare.py
-python scripts/validate.py
-python -m unittest discover -s tests
-python scripts/build_windows.py         # Windows，自动解压固定版本 NSIS
-python scripts/build_android.py         # Windows/Linux/macOS
-python scripts/build_macos.py           # macOS，使用 pkgbuild/productbuild
-python scripts/package_delivery.py
-```
+本仓库保留复现构建及维护所需的源码和测试。Releases 中另附修改源码、对应原生源码和完整交付包；普通用户只需下载自己平台的安装包。
 
-构建时需要联网下载固定版本依赖，安装时不需要。`sources.lock.json` 固定源码提交和下载校验值；`resource-manifest.json` 固定实际装入的资源。修改方案后必须重新验证。
-
-安卓从同文 v3.3.4 的 Kotlin/Java 源码编译，保留 JNI 类命名空间，修改应用标识为 `org.nushuinput.trial`。
-原生库从相同版本官方 APK 中提取，两个 ABI 使用同一套源码版本；不修改原生库。
-这样避免为本次数据和界面适配重新编译庞大的原生依赖。原生库源码版本由上游 tag 的子模块提交固定。
-如需从头构建原生库，使用 `python scripts/package_delivery.py --full-native-source` 获取并附带对应源代码。
-
-## GitHub Actions
-
-工作流 `.github/workflows/build.yml` 在 Windows、Linux、macOS 分别构建，产物保存在 Actions Artifacts，不自动创建公开 Release。
-Mac 产物用系统工具检查 Intel/ARM64 架构和应用签名，并在一次性 macOS 环境中实际安装、部署用户配置及验证 396 字输入；真实桌面会话仍需人工验收。
-
-若只有 Windows，可使用 `python scripts/build_macos.py --portable` 生成未签名的标准 XAR 安装包，原样保留鼠须管组件的应用内容，并检查归档校验、脚本和架构。
-该方法不等于经过 macOS Installer 验证；本次便携构建包的状态必须与原生构建分别记录。
-
-Android Actions 默认编译 `NushuInput-unsigned.apk`，不上传签名私钥或密码。下载产物后，在原签名所在的本机运行：
-
-```text
-python scripts/sign_android.py path/to/NushuInput-unsigned.apk
-```
-
-本地首次构建自动创建试用签名，保存在用户目录 `.codex/secrets/nushu-input`，并备份到其 `backup` 子目录；不进入源码或交付压缩包。
-本地签名工具复用已有密钥，禁止临时生成替代密钥，以免后续 APK 无法覆盖升级。
-不要把签名密码或密钥写入工作流、提交或日志。
-
-## 数据与许可
-
-- 女书方案：[nushu-script/rime-nushu](https://github.com/nushu-script/rime-nushu)，Unlicense。
-- 对照数据：[nushu-script/unicode_nushu](https://github.com/nushu-script/unicode_nushu)，用于校验并生成差异报告，首版不改原映射。
-- 字体：[nushu-script/noto-sans-nushu](https://github.com/nushu-script/noto-sans-nushu)，SIL OFL 1.1。
-- Windows：[rime/weasel](https://github.com/rime/weasel) 0.17.4；macOS：[rime/squirrel](https://github.com/rime/squirrel) 1.1.2。
-- Android：[osfans/trime](https://github.com/osfans/trime/tree/v3.3.4)，GPL-3.0-or-later；安卓修改和构建脚本按同一许可证提供。
-- 原始词库、OpenCC 字典及第三方组件保留各自许可。不得把整个工程统一标成 Unlicense。
-
-为兼容 2020 年女书方案，公共依赖采用固定小狼毫发行包附带的朙月拼音配置；不直接替换成修改过简繁转换开关的新版本。
-候选栏内置字体；跨应用的显示由目标应用字体决定。输出字符不使用汉字码位伪装，不加入私用区替代编码。
-
-用户说明：`docs/使用说明.txt`。测试报告和完整来源清单随构建产物交付。
-
-安卓当前原生库来自同文 v3.3.4，已在 4KB 内存页环境测试；16KB 内存页设备尚未验证，不能承诺全部较新安卓机型均可用。
+基于 [rime-nushu](https://github.com/nushu-script/rime-nushu)、[unicode_nushu](https://github.com/nushu-script/unicode_nushu)、[Noto Sans Nushu](https://github.com/nushu-script/noto-sans-nushu)，平台程序采用小狼毫、鼠须管和同文输入法。本项目为社区开源组件的集成试用版，各组件保留其原许可与署名。
