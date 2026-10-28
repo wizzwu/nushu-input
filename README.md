@@ -2,6 +2,20 @@
 
 输入英文字母拼音，选择女书候选，输出标准 Unicode 女书字符。包含普通话拼音和江永方言拼音，支持原项目的 396 个女书字符。
 
+## 下载安装（0.1.0 试用版）
+
+| 平台 | 直接下载 | 目标设备 |
+|---|---|---|
+| Windows | [下载 Windows 安装包](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput-Setup.exe) | Windows 10/11，Intel/AMD 64 位 |
+| macOS | [下载 macOS 安装包](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput.pkg) | macOS 13+，Intel / Apple Silicon |
+| 安卓 | [下载安卓安装包](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput.apk) | Android 8+，ARM 32/64 位 |
+
+[完整交付包（含说明、源码、许可和验证记录）](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/NushuInput-delivery.zip) · [试用版发布页面](https://github.com/wizzwu/todo/releases/tag/v0.1.0-trial) · [SHA-256 校验清单](https://github.com/wizzwu/todo/releases/download/v0.1.0-trial/SHA256SUMS.txt)
+
+安装与首次使用无需联网。输入英文字母拼音后选择女书候选；系统要求的授权、启用及切换输入法仍需确认。
+
+**验证范围：**Mac 已在临时 macOS 环境通过安装、配置部署和 396 字输入引擎检查；安卓通过断网模拟器测试。Windows 干净系统安装及实体设备验收尚未完成。桌面安装器未做商业签名或苹果公证；安卓 16KB 内存页设备尚未验证。详情见[验证记录](docs/验证记录.md)。
+
 | 平台 | 产物 | 目标设备 |
 |---|---|---|
 | Windows | `dist/NushuInput-Setup.exe` | Windows 10/11，Intel/AMD x64 |
