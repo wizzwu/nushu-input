@@ -43,6 +43,8 @@ jobs:
           /usr/bin/ruby -c platforms/macos/configure.rb
           /bin/bash -n platforms/macos/postinstall
           /bin/bash -n platforms/macos/启用女书.command
+      - name: Install and test on disposable macOS runner
+        run: /bin/bash scripts/test_macos_install.sh
       - run: python scripts/validate.py
       - run: python -m unittest discover -s tests
       - run: python scripts/package_delivery.py --platform macos

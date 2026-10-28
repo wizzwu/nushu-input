@@ -42,13 +42,14 @@ Mac 产物用系统工具展开，检查 Intel/ARM64 架构和应用签名；该
 若只有 Windows，可使用 `python scripts/build_macos.py --portable` 生成未签名的标准 XAR 安装包，原样保留鼠须管组件的应用内容，并检查归档校验、脚本和架构。
 该方法不等于经过 macOS Installer 验证；本次便携构建包的状态必须与原生构建分别记录。
 
-首次配置 Android Actions 时需设置以下仓库 Secrets，必须与本地签名相同：
+Android Actions 默认编译 `NushuInput-unsigned.apk`，不上传签名私钥或密码。下载产物后，在原签名所在的本机运行：
 
-- `NUSHU_KEYSTORE_BASE64`：签名文件 Base64 内容。
-- `NUSHU_STORE_PASSWORD`、`NUSHU_KEY_PASSWORD`、`NUSHU_KEY_ALIAS`。
+```text
+python scripts/sign_android.py path/to/NushuInput-unsigned.apk
+```
 
 本地首次构建自动创建试用签名，保存在用户目录 `.codex/secrets/nushu-input`，并备份到其 `backup` 子目录；不进入源码或交付压缩包。
-CI 缺少签名时直接失败，禁止生成新密钥，以免后续 APK 无法覆盖升级。
+本地签名工具复用已有密钥，禁止临时生成替代密钥，以免后续 APK 无法覆盖升级。
 不要把签名密码或密钥写入工作流、提交或日志。
 
 ## 数据与许可
