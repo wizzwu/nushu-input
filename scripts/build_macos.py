@@ -73,7 +73,7 @@ def main():
     if not verification.exists():
         run("pkgutil", "--expand-full", DIST / "NushuInput.pkg", verification)
     squirrel_binary = next(verification.rglob("Squirrel.app/Contents/MacOS/Squirrel"))
-    run("lipo", "-verify_arch", "x86_64", "arm64", squirrel_binary)
+    run("lipo", squirrel_binary, "-verify_arch", "x86_64", "arm64")
     run("codesign", "--verify", "--deep", "--strict", squirrel_binary.parents[2])
     # These validate the product and payload, not installation on a real Mac.
     print(DIST / "NushuInput.pkg")

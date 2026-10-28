@@ -205,11 +205,15 @@ def signing(dest):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--prepare-only", action="store_true")
+    parser.add_argument("--unsigned", action="store_true", help="Build a CI APK for signing locally; never generate or upload a CI private key")
     args = parser.parse_args()
     dest = prepare_android()
     if args.prepare_only:
         return
-    signing(dest)
+    if args.unsigned:
+        (dest / "keystore.properties").unlink(missing_ok=True)
+    else:
+        signing(dest)
     env = dict(os.environ, BUILD_VERSION_NAME="0.1.0", BUILD_GIT_REPO="https://github.com/wizzwu/todo", CI_NAME="NushuInput",
                BUILD_COMMIT_HASH=LOCK["sources"]["trime"]["commit"])
     if os.name == "nt":
@@ -218,14 +222,16 @@ def main():
         cmd = ["bash", "gradlew"]
     run(*cmd, ":app:assembleRelease", "--no-daemon", "--console=plain", cwd=dest, env=env)
     apks = list((dest / "app/build/outputs/apk/release").glob("*.apk"))
+    apks = [p for p in apks if p.name.endswith("-unsigned.apk") == args.unsigned]
     if len(apks) != 1:
         raise RuntimeError(f"Expected one universal APK, got {apks}")
     with zipfile.ZipFile(apks[0]) as apk:
         for abi in ["arm64-v8a", "armeabi-v7a"]:
             assert any(p.startswith(f"lib/{abi}/") for p in apk.namelist()), abi
     DIST.mkdir(exist_ok=True)
-    shutil.copy2(apks[0], DIST / "NushuInput.apk")
-    print(DIST / "NushuInput.apk")
+    target = DIST / ("NushuInput-unsigned.apk" if args.unsigned else "NushuInput.apk")
+    shutil.copy2(apks[0], target)
+    print(target)
 
 
 if __name__ == "__main__":
