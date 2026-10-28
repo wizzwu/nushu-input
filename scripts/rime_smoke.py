@@ -44,12 +44,31 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dll", required=True)
     parser.add_argument("--label", default="pinned-weasel-0.17.4")
+    parser.add_argument("--function-table", action="store_true", help="Exercise the stable rime_get_api interface used by modern Squirrel")
     args = parser.parse_args()
     dll_path = Path(args.dll).resolve()
     handle = os.add_dll_directory(str(dll_path.parent)) if os.name == "nt" else None
     lib = C.CDLL(str(dll_path))
     S = C.c_size_t
+    api_names = ["Setup", "SetNotificationHandler", "Initialize", "Finalize", "StartMaintenance", "IsMaintenanceMode", "JoinMaintenanceThread",
+                 "DeployerInitialize", "Prebuild", "Deploy", "DeploySchema", "DeployConfigFile", "SyncUserData", "CreateSession", "FindSession",
+                 "DestroySession", "CleanupStaleSessions", "CleanupAllSessions", "ProcessKey", "CommitComposition", "ClearComposition",
+                 "GetCommit", "FreeCommit", "GetContext", "FreeContext", "GetStatus", "FreeStatus", "SetOption", "GetOption",
+                 "SetProperty", "GetProperty", "GetSchemaList", "FreeSchemaList", "GetCurrentSchema", "SelectSchema"]
+    use_table = args.function_table or not hasattr(lib, "RimeSetup")
+    if use_table:
+        class Api(C.Structure):
+            _fields_ = [("data_size", C.c_int), ("slots", C.c_void_p * len(api_names))]
+        get_api = lib.rime_get_api
+        get_api.restype = C.POINTER(Api)
+        get_api.argtypes = []
+        api = get_api().contents
+        assert api.data_size >= C.sizeof(Api) - C.sizeof(C.c_int)
     def bind(name, restype, *argtypes):
+        if use_table:
+            address = api.slots[api_names.index(name)]
+            assert address, f"Missing stable Rime API entry: {name}"
+            return C.CFUNCTYPE(restype, *argtypes)(address)
         fn = getattr(lib, "Rime" + name)
         fn.restype, fn.argtypes = restype, list(argtypes)
         return fn
@@ -169,7 +188,8 @@ def main():
     finally:
         destroy(session)
         finalize()
-    report = {"library": str(dll_path), "label": args.label, "architecture_bits": C.sizeof(C.c_void_p) * 8, "results": results}
+    report = {"library": str(dll_path), "label": args.label, "architecture_bits": C.sizeof(C.c_void_p) * 8,
+              "interface": "rime_get_api" if use_table else "legacy exported functions", "results": results}
     reports = ROOT / "reports"
     reports.mkdir(exist_ok=True)
     (reports / f"rime-smoke-{args.label}.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
