@@ -1,0 +1,86 @@
+{
+  "library": "E:\\nushu Input Method\\.build\\weasel-extracted\\rime.dll",
+  "label": "pinned-0.17.4-x86",
+  "architecture_bits": 32,
+  "results": [
+    {
+      "schema": "nushu",
+      "input": "i",
+      "candidates": [
+        "𛋤",
+        "𛋕",
+        "𛊺",
+        "𛅰",
+        "𛆼"
+      ]
+    },
+    {
+      "committed_unicode": "𛋤",
+      "codepoints": [
+        "U+1B2E4"
+      ]
+    },
+    {
+      "dialect_characters_reachable": 396,
+      "untoned_spellings_tested": 213
+    },
+    {
+      "schema": "luna_pinyin_nushu",
+      "input": "yi",
+      "candidates": [
+        "𛆼",
+        "𛅰",
+        "𛋤",
+        "𛆼",
+        "𛆱"
+      ]
+    },
+    {
+      "schema": "luna_pinyin_nushu",
+      "input": "nv",
+      "candidates": [
+        "𛆁",
+        "钕",
+        "籹",
+        "衄",
+        "胬"
+      ]
+    },
+    {
+      "schema": "luna_pinyin_nushu",
+      "input": "ren",
+      "candidates": [
+        "𛅳",
+        "𛊉",
+        "𛆲",
+        "𛆱",
+        "𛅺"
+      ]
+    },
+    {
+      "toggle_to_hanzi": [
+        "一",
+        "以",
+        "已",
+        "亿",
+        "易"
+      ]
+    },
+    {
+      "pagination_first": [
+        "一",
+        "以",
+        "已",
+        "亿",
+        "易"
+      ],
+      "pagination_second": [
+        "亦",
+        "伊",
+        "意",
+        "依",
+        "义"
+      ]
+    }
+  ]
+}

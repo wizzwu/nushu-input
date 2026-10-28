@@ -1,0 +1,25 @@
+#!/bin/bash
+set -eu
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+DEST='/Library/Application Support/NushuInput'
+/bin/mkdir -p "$DEST"
+/bin/cp -R "$SCRIPT_DIR/payload/." "$DEST/"
+/usr/sbin/chown -R root:wheel "$DEST"
+/bin/chmod -R go-w "$DEST"
+/bin/chmod 755 "$DEST/启用女书.command"
+/bin/mkdir -p /Library/Fonts
+if [ ! -f /Library/Fonts/NotoSansNushu-Regular.ttf ]; then
+  /bin/cp "$DEST/fonts/NotoSansNushu-Regular.ttf" /Library/Fonts/
+  /usr/sbin/chown root:wheel /Library/Fonts/NotoSansNushu-Regular.ttf
+  /bin/chmod 644 /Library/Fonts/NotoSansNushu-Regular.ttf
+fi
+login_user="$(/usr/bin/stat -f '%Su' /dev/console)"
+if [ "$login_user" != root ] && [ "$login_user" != loginwindow ] && [ "$login_user" != _mbsetupuser ]; then
+  # sudo -H uses the user's real home, not the privileged installer's HOME.
+  if ! /usr/bin/sudo -H -u "$login_user" /usr/bin/ruby "$DEST/configure.rb"; then
+    echo "女书用户配置失败，请查看该用户 ~/Library/Logs/NushuInput-install.log" >&2
+    exit 1
+  fi
+else
+  echo "未检测到桌面用户。登录后运行 $DEST/启用女书.command。"
+fi

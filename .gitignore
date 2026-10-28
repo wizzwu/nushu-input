@@ -1,0 +1,10 @@
+.build/
+upstream/
+dist/
+__pycache__/
+*.pyc
+*.keystore
+*.jks
+keystore.properties
+signing/
+.secrets/

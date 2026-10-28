@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "sources": {
+    "rime-nushu": {
+      "repo": "nushu-script/rime-nushu",
+      "commit": "5909364466ce514f8ac5a37d5f11251e562ecda0"
+    },
+    "unicode_nushu": {
+      "repo": "nushu-script/unicode_nushu",
+      "commit": "928c9ad7d607c606ebdb1f155e648873a706515b"
+    },
+    "noto-sans-nushu": {
+      "repo": "nushu-script/noto-sans-nushu",
+      "commit": "312c203cdd6574e02787d30cf0a6c3e2b739c60a"
+    },
+    "trime": {
+      "repo": "osfans/trime",
+      "commit": "5ec15ed0d8deba73efde2c9db25785ddc0d6023e"
+    },
+    "weasel": {
+      "repo": "rime/weasel",
+      "commit": "9cc96e20dc71b80876b12f689bb5863c76c2a7ed"
+    },
+    "squirrel": {
+      "repo": "rime/squirrel",
+      "commit": "876adebaf2f612951dcdca8a591de65401222b9a"
+    }
+  },
+  "downloads": {
+    "weasel.exe": {
+      "url": "https://github.com/rime/weasel/releases/download/0.17.4/weasel-0.17.4.0-installer.exe",
+      "sha256": "cf509534a8f5f8af9c98ed7cbb8f135439f145a8cbe7e50ede42bb5b5ab45c29"
+    },
+    "squirrel.pkg": {
+      "url": "https://github.com/rime/squirrel/releases/download/1.1.2/Squirrel-1.1.2.pkg",
+      "sha256": "614746013212937623d5bbab9901e9c43d1ec937aa32307d6b6092a05e308287"
+    },
+    "trime-arm64.apk": {
+      "url": "https://github.com/osfans/trime/releases/download/v3.3.4/com.osfans.trime-v3.3.4-0-g5ec15ed0-arm64-v8a-release.apk",
+      "sha256": "d5d8fa84a8cce5e8f28a7906ddca6848ca76caef0b5cb4ff230cd034573e71e4"
+    },
+    "trime-arm32.apk": {
+      "url": "https://github.com/osfans/trime/releases/download/v3.3.4/com.osfans.trime-v3.3.4-0-g5ec15ed0-armeabi-v7a-release.apk",
+      "sha256": "82f070904536c1f3d11959a96ffb489cc44cc3cf5d8b224df79786abd407cc6b"
+    },
+    "python-embed.zip": {
+      "url": "https://www.python.org/ftp/python/3.12.10/python-3.12.10-embed-amd64.zip",
+      "sha256": "4acbed6dd1c744b0376e3b1cf57ce906f9dc9e95e68824584c8099a63025a3c3"
+    },
+    "nsis.zip": {
+      "url": "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.11/nsis-3.11.zip",
+      "sha256": "c7d27f780ddb6cffb4730138cd1591e841f4b7edb155856901cdf5f214394fa1"
+    }
+  }
+}

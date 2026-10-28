@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=Nushu Input Trial
+Signer #1 certificate SHA-256 digest: d4721c051d4a17e3588d9a2b52ea7761c2ef5bed73ae37a2b3c9dfa07163883f
+Signer #1 certificate SHA-1 digest: 2541d55acb2eee64f5e8e9d1d139aa040e5ace24
+Signer #1 certificate MD5 digest: 3edc8f73dc72c7f92ed9752ba36692ea
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 2604aecf0e7bab882e312cec1a66622e239bc48366461a00cf7a6cf8d8d84fa4
+Signer #1 public key SHA-1 digest: 3891fe303af1d378475af947c232eab54efbf047
+Signer #1 public key MD5 digest: 78c85c01545a8cf2c2d406c122152f50

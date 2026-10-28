@@ -1,0 +1,57 @@
+{
+  "dictionary_unique_characters": 396,
+  "font_covered_characters": 396,
+  "opencc_reachable_characters": 396,
+  "reference_characters": 396,
+  "reading_differences": [
+    {
+      "character": "𛈁",
+      "codepoint": "U+1B201",
+      "input_reading": "sew35",
+      "reference_reading": "lew44"
+    },
+    {
+      "character": "𛈂",
+      "codepoint": "U+1B202",
+      "input_reading": "lew44",
+      "reference_reading": "sew35"
+    },
+    {
+      "character": "𛈪",
+      "codepoint": "U+1B22A",
+      "input_reading": "ngu13",
+      "reference_reading": "ang21"
+    },
+    {
+      "character": "𛈻",
+      "codepoint": "U+1B23B",
+      "input_reading": "ang21",
+      "reference_reading": "ngu13"
+    },
+    {
+      "character": "𛉋",
+      "codepoint": "U+1B24B",
+      "input_reading": "kue35",
+      "reference_reading": "tsiou33"
+    },
+    {
+      "character": "𛉨",
+      "codepoint": "U+1B268",
+      "input_reading": "tsiou33",
+      "reference_reading": "kue35"
+    },
+    {
+      "character": "𛋫",
+      "codepoint": "U+1B2EB",
+      "input_reading": "tciang44",
+      "reference_reading": "tciang33"
+    },
+    {
+      "character": "𛋭",
+      "codepoint": "U+1B2ED",
+      "input_reading": "tciong33",
+      "reference_reading": "tciong44"
+    }
+  ],
+  "policy": "Report differences; preserve upstream mappings and readings."
+}
