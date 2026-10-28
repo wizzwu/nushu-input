@@ -1,0 +1,20 @@
+{
+  "id": 12821220689,
+  "node_id": "MDg6QXJ0aWZhY3QxMjgyMTIyMDY4OQ==",
+  "name": "NushuInput-Android-unsigned-for-local-signing",
+  "size_in_bytes": 61970141,
+  "url": "https://api.github.com/repos/wizzwu/todo/actions/artifacts/12821220689",
+  "archive_download_url": "https://api.github.com/repos/wizzwu/todo/actions/artifacts/12821220689/zip",
+  "expired": false,
+  "digest": "sha256:917add9ac0009fb0f7faae01561bdcf6a6afaa9cf8042af8cbc45edfa086e844",
+  "created_at": "2026-10-28T13:41:49Z",
+  "updated_at": "2026-10-28T13:41:49Z",
+  "expires_at": "2027-01-26T13:37:24Z",
+  "workflow_run": {
+    "id": 40698127589,
+    "repository_id": 1436022902,
+    "head_repository_id": 1436022902,
+    "head_branch": "main",
+    "head_sha": "911fdba2c2a69da886aaa0752b0e02555cdd5668"
+  }
+}

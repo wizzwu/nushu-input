@@ -1,0 +1,109 @@
+{
+  "sources": {
+    "rime-nushu": {
+      "repo": "nushu-script/rime-nushu",
+      "commit": "5909364466ce514f8ac5a37d5f11251e562ecda0"
+    },
+    "unicode_nushu": {
+      "repo": "nushu-script/unicode_nushu",
+      "commit": "928c9ad7d607c606ebdb1f155e648873a706515b"
+    },
+    "noto-sans-nushu": {
+      "repo": "nushu-script/noto-sans-nushu",
+      "commit": "312c203cdd6574e02787d30cf0a6c3e2b739c60a"
+    },
+    "trime": {
+      "repo": "osfans/trime",
+      "commit": "5ec15ed0d8deba73efde2c9db25785ddc0d6023e"
+    },
+    "weasel": {
+      "repo": "rime/weasel",
+      "commit": "9cc96e20dc71b80876b12f689bb5863c76c2a7ed"
+    },
+    "squirrel": {
+      "repo": "rime/squirrel",
+      "commit": "876adebaf2f612951dcdca8a591de65401222b9a"
+    }
+  },
+  "downloads": {
+    "weasel.exe": {
+      "url": "https://github.com/rime/weasel/releases/download/0.17.4/weasel-0.17.4.0-installer.exe",
+      "sha256": "cf509534a8f5f8af9c98ed7cbb8f135439f145a8cbe7e50ede42bb5b5ab45c29"
+    },
+    "squirrel.pkg": {
+      "url": "https://github.com/rime/squirrel/releases/download/1.1.2/Squirrel-1.1.2.pkg",
+      "sha256": "614746013212937623d5bbab9901e9c43d1ec937aa32307d6b6092a05e308287"
+    },
+    "trime-arm64.apk": {
+      "url": "https://github.com/osfans/trime/releases/download/v3.3.4/com.osfans.trime-v3.3.4-0-g5ec15ed0-arm64-v8a-release.apk",
+      "sha256": "d5d8fa84a8cce5e8f28a7906ddca6848ca76caef0b5cb4ff230cd034573e71e4"
+    },
+    "trime-arm32.apk": {
+      "url": "https://github.com/osfans/trime/releases/download/v3.3.4/com.osfans.trime-v3.3.4-0-g5ec15ed0-armeabi-v7a-release.apk",
+      "sha256": "82f070904536c1f3d11959a96ffb489cc44cc3cf5d8b224df79786abd407cc6b"
+    },
+    "python-embed.zip": {
+      "url": "https://www.python.org/ftp/python/3.12.10/python-3.12.10-embed-amd64.zip",
+      "sha256": "4acbed6dd1c744b0376e3b1cf57ce906f9dc9e95e68824584c8099a63025a3c3"
+    },
+    "nsis.zip": {
+      "url": "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.11/nsis-3.11.zip",
+      "sha256": "c7d27f780ddb6cffb4730138cd1591e841f4b7edb155856901cdf5f214394fa1"
+    }
+  },
+  "resources": {
+    "shared/essay.txt": "ae37983a4216145a6854375f21016358470c5dcf5ae9f6a54c29801e70b4d824",
+    "shared/key_bindings.yaml": "19c52d80a4bf043c16c49fdfeb58cfa4d7a9f2b94bd18c79ff2485bd7627db5f",
+    "shared/symbols.yaml": "d3c1823f0e3bae5fb2dac338f4863a0d7164436d1ee132727ff5c4687f53601a",
+    "shared/pinyin.yaml": "f2d291166946a848fd88e541844567415f1ed3d9c5a7477757b88aeb3a69c0ca",
+    "shared/default.yaml": "5a438c92aa7ddd749644c7c799967074634d41ace924859be2a371f29565c892",
+    "shared/nushu.dict.yaml": "e851aa6da6755b3db26aef2c4c5df43c5d0aea1ad7b6943e537a26c574c4f1d8",
+    "shared/luna_pinyin_simp.schema.yaml": "ccbbc1504f0aa730f054938d9ae22cc3a7019d2fa023399fba795371323077d5",
+    "shared/luna_pinyin_nushu.schema.yaml": "dbcdd0c9a2d8bfb6ef51cbbbc4421e8d24069a7874b8304f650c63176a182195",
+    "shared/luna_pinyin.schema.yaml": "a80c89bd16d31842bacbee6b17b9ba1a4f5fd862b7db31049a229aed8628299e",
+    "shared/stroke.dict.yaml": "0fe1c1c0673f3564f16deb1f659a75f3ad6a43e5308165dccfb63fd94864f631",
+    "shared/nushu.schema.yaml": "3ed4f5c513dbb21b3e6ee4b7a0dd0758b6224cc72def84d24fd3fbbd4980950f",
+    "shared/luna_pinyin.dict.yaml": "dc15421f70e80b5d9dc0339db79856b671a58f8e6779c1b5b7592b83a57b0817",
+    "shared/punctuation.yaml": "c9e5147fda24d1a13085075df5a2e73deecb643069be3751c6d4d793ceb2de5b",
+    "shared/stroke.schema.yaml": "f541d4c7450370b2652ae5e4190396803504edc987f74f16718458811312f303",
+    "shared/opencc/s2twp.json": "d6ef232badf4a31c8cfac2db2c46383e7c57b9fb452ff3c98066199482a582e9",
+    "shared/opencc/hk2t.json": "c3ff1dcc28474e7a7da6b6c398db91bad6e2e43600b20f8459f7e583c341db65",
+    "shared/opencc/TWPhrases.ocd2": "14ce3a5beded4e387f571ff6aa0473d631c02b6e9af019960c87e1cd278640c5",
+    "shared/opencc/STCharacters.ocd2": "4c7398b4ceedf9b58b5ea77cdd911bc7807c50c7491111dc9b4073c68ad5a2bb",
+    "shared/opencc/s2tw.json": "32612b976c67f78bfffa3223995e59a7a6956d42624ee4d8c63216c6bcd006c6",
+    "shared/opencc/tw2sp.json": "7ed48c20581a6414946498e069b6d08d02e550e377f19017ef6793f7550bdefd",
+    "shared/opencc/HKVariantsRevPhrases.ocd2": "0fd9bc1f9e9250224b0737e320a850fc630f37b7c475a1dcb1081416ade13efa",
+    "shared/opencc/t2jp.json": "535a27c482bffbd900009588ba9b0d7687d66843ed4075b76a89dfe542234285",
+    "shared/opencc/JPShinjitaiPhrases.ocd2": "e3d06b628271327797fa57528a7eef8830f4a1f153e1c5a588f89d77831f7259",
+    "shared/opencc/t2s.json": "ebe32a6766bfbaea1869f82368f54a8fc6c977a235e8a896b618714872b5df09",
+    "shared/opencc/tw2t.json": "2c3314a996c875be2af3f4967d44c03ee4c4e9c6fc10dfb0bb8ba9a4c40e5687",
+    "shared/opencc/jp2t.json": "f2b06bd405c02548354924363ba19f01d72de589af9f7619728df6cfa9458bc7",
+    "shared/opencc/TWVariants.ocd2": "390f07a1867ad56aa60a7af23b6e4b3acc96ea48d893c06ede3dffb1c576c2bc",
+    "shared/opencc/s2hk.json": "b947bde9306e0c9dc6515d4a337db05e6cc632655658744326c209662475a4c7",
+    "shared/opencc/hk2s.json": "2e796ccc70df15aaa6f6a52098ade1dbb0143ba0ad7d07a8f11a2cceef8ee77e",
+    "shared/opencc/t2tw.json": "d3e1b549cba6423f88528dfde1a9597fd53cb3496fe38c12092fd2a4d06bd387",
+    "shared/opencc/STPhrases.ocd2": "5e8d8289beacc7d4ab7baa7193ebb589f3d5a956449ed9c81ccff431ae503f6e",
+    "shared/opencc/HKVariantsRev.ocd2": "87d4483565860dc96ea5af26f0716864966c4600cc03d5dde73b9487d826021a",
+    "shared/opencc/s2nushu.json": "efd6a227f85772c088ddb71af5c6ba059bbf0e716099cacc67628a93f62d1201",
+    "shared/opencc/JPShinjitaiCharacters.ocd2": "970d1ff54460ed4ef3c0e7dab7cd176c917ded0aaeef4299e77de32d94995914",
+    "shared/opencc/TWVariantsRevPhrases.ocd2": "ea51dde3e45fdaf9349473ae19b3567fe5da59b01aeff2f4e9eae50c9baf2c24",
+    "shared/opencc/JPVariants.ocd2": "e7f9daaa4bee07cbc70a3e186bdb42f2f4fb300df895a1cfd472c4fde0d52831",
+    "shared/opencc/TWPhrasesRev.ocd2": "5f8526ecc80a352a876fb8a6750111bd78465355b606b502fb018a57ba7e102c",
+    "shared/opencc/TSPhrases.ocd2": "edafc46f5c3eca61a754c78e47117e7c73995cacd6c99aadcb8a219d7ae3e53d",
+    "shared/opencc/s2t.json": "919c0a6fde65555879b249588ab8c785c5e4b85704be8863361776bd48094a25",
+    "shared/opencc/HKVariants.ocd2": "62750cb79eef18a407030b05bd4abe0e102bec2254d04b2d2310792f44519321",
+    "shared/opencc/TWVariantsRev.ocd2": "663471398c79400db4485df5e92b709ac174c5e393f4fe0e3d5b02034024d609",
+    "shared/opencc/TSCharacters.ocd2": "85291e0173e972bbca58c848fb90b3bb41c79674cb61a75645e01bd884ad5927",
+    "shared/opencc/tw2s.json": "f6760923bfd681627a3c26b01f64c70de922ad57cf77d8494a46a9a287dfdef2",
+    "shared/opencc/t2hk.json": "bb27109c2ed7b4034150d00238ea07efe9d2421ac77f1fadd938b19f8c1c6a5b",
+    "shared/opencc/s2nushu.txt": "a45c7670d405270e091a7b4900eb4035bf3e16c2797d05aed3bfbe2f8cb02cfe",
+    "shared/opencc/JPVariantsRev.ocd2": "9f4fcdd369741ae7421d7e6d906681e133389be88ee146e214ee24c27ab8bab2",
+    "fonts/NotoSansNushu-Regular.ttf": "14baf515f16a963219e164515eef818e37d50e109f66adc85c830ebde179cddc",
+    "licenses/NotoSansNushu-OFL.txt": "4ec413b9f432d3ca94f33bae4f70c2cc175c590eeb7f25da6431476ba67fd496",
+    "licenses/Weasel-LICENSE.txt": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b",
+    "licenses/rime-nushu.txt": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c",
+    "licenses/7-zip-license.txt": "3a9a7bca133a8af4560f48dfa351f941e110d80a2c2466e537ec6680b9fc2dda",
+    "licenses/Squirrel-LICENSE.txt": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "licenses/PyYAML-LICENSE.txt": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+  }
+}

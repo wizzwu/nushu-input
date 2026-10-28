@@ -1,0 +1,21 @@
+{
+  "run_url": "https://github.com/wizzwu/todo/actions/runs/40700215908",
+  "run_id": 40700215908,
+  "job_id": 122857687224,
+  "conclusion": "success",
+  "platform": "macOS 15 ARM64 disposable GitHub runner",
+  "pkg_sha256": "bbcbf805beedb862a78c553f24c3571068669c4b4285f1a0c205acfce955c2a7",
+  "verified": [
+    "system Installer successful",
+    "system font installed",
+    "current-user Ruby configuration deployed",
+    "both schemas compiled",
+    "396-character native Rime input smoke tests",
+    "configuration preservation unit tests"
+  ],
+  "not_verified": [
+    "human desktop session and input method registration after logout",
+    "Intel and macOS 13 physical installation",
+    "upgrade, cancellation and uninstall user flows"
+  ]
+}

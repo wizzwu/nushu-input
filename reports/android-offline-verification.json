@@ -1,6 +1,6 @@
 {
   "date": "2026-10-28",
-  "apk_sha256": "15d6dfbb77c850ef01aef92398aef50fe878414f9869c7072ed0b1db3ec987f6",
+  "apk_sha256": "cf6bb9c347155bf3043a3472a9181f896daadd49b9417ab542baffbca55f0383",
   "environment": {
     "android_release": "16",
     "sdk": "36",
@@ -19,7 +19,7 @@
     "clipboard roundtrip preserves Unicode",
     "in-place APK upgrade preserves user-directory marker"
   ],
-  "fixture_log": "--------- beginning of main\n10-28 13:18:44.843  7293  7293 I NushuFixture: TEXT=𛆁 CODEPOINTS=U+1B181 \n10-28 13:18:44.854  7293  7293 I NushuFixture: CLIPBOARD_ROUNDTRIP=true\n10-28 13:19:20.117  7293  7293 I NushuFixture: TEXT=𛆁女 CODEPOINTS=U+1B181 U+5973 \n10-28 13:19:20.121  7293  7293 I NushuFixture: CLIPBOARD_ROUNDTRIP=true\n10-28 13:19:20.773  7293  7293 I NushuFixture: TEXT=𛆁女𛋤 CODEPOINTS=U+1B181 U+5973 U+1B2E4 \n10-28 13:19:20.775  7293  7293 I NushuFixture: CLIPBOARD_ROUNDTRIP=true",
+  "fixture_log": "--------- beginning of main\n10-28 13:46:56.494  5997  5997 I NushuFixture: TEXT=𛆁 CODEPOINTS=U+1B181 \n10-28 13:46:56.500  5997  5997 I NushuFixture: CLIPBOARD_ROUNDTRIP=true\n10-28 13:46:57.421  5997  5997 I NushuFixture: TEXT=𛆁女 CODEPOINTS=U+1B181 U+5973 \n10-28 13:46:57.426  5997  5997 I NushuFixture: CLIPBOARD_ROUNDTRIP=true\n10-28 13:46:58.019  5997  5997 I NushuFixture: TEXT=𛆁女𛋤 CODEPOINTS=U+1B181 U+5973 U+1B2E4 \n10-28 13:46:58.021  5997  5997 I NushuFixture: CLIPBOARD_ROUNDTRIP=true",
   "limitations": [
     "No physical ARM device tested",
     "No 16KB page-size device tested",

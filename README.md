@@ -37,7 +37,7 @@ python scripts/package_delivery.py
 ## GitHub Actions
 
 工作流 `.github/workflows/build.yml` 在 Windows、Linux、macOS 分别构建，产物保存在 Actions Artifacts，不自动创建公开 Release。
-Mac 产物用系统工具展开，检查 Intel/ARM64 架构和应用签名；该检查不能代替真机安装。
+Mac 产物用系统工具检查 Intel/ARM64 架构和应用签名，并在一次性 macOS 环境中实际安装、部署用户配置及验证 396 字输入；真实桌面会话仍需人工验收。
 
 若只有 Windows，可使用 `python scripts/build_macos.py --portable` 生成未签名的标准 XAR 安装包，原样保留鼠须管组件的应用内容，并检查归档校验、脚本和架构。
 该方法不等于经过 macOS Installer 验证；本次便携构建包的状态必须与原生构建分别记录。

@@ -9,6 +9,12 @@ from common import ROOT, BUILD, DIST, download, sha256
 from xar_package import read_xar
 
 
+def equivalent_text(left, right):
+    # Git checkouts may use CRLF on Windows and LF on macOS/Linux.
+    # Validate the actual Unicode content without conflating line endings.
+    return left.decode("utf-8-sig").replace("\r\n", "\n") == right.decode("utf-8-sig").replace("\r\n", "\n")
+
+
 def cpio_files(raw):
     pos = 0
     files = {}
@@ -52,7 +58,7 @@ def verify():
         assert scripts["postinstall"][0] & 0o111
         assert scripts["payload/启用女书.command"][0] & 0o111
         for schema in ["nushu.schema.yaml", "luna_pinyin_nushu.schema.yaml", "nushu.dict.yaml"]:
-            assert scripts["payload/shared/" + schema][1] == (BUILD / "shared" / schema).read_bytes()
+            assert equivalent_text(scripts["payload/shared/" + schema][1], (BUILD / "shared" / schema).read_bytes())
         assert scripts["payload/fonts/NotoSansNushu-Regular.ttf"][1] == (BUILD / "fonts/NotoSansNushu-Regular.ttf").read_bytes()
         payload = cpio_files(gzip.decompress(original["Payload"]))
         binary = next(data for name, (_, data) in payload.items() if name.endswith("Squirrel.app/Contents/MacOS/Squirrel"))
@@ -61,7 +67,7 @@ def verify():
         stride = 20 if magic == 0xCAFEBABE else 32
         archs = [struct.unpack_from(">I", binary, 8 + i * stride)[0] for i in range(count)]
         assert {0x01000007, 0x0100000C} <= set(archs), archs
-        results["macos"] = {"archive_checksums": "passed", "scripts_and_resources": "passed", "squirrel_unmodified": True, "mach_o_architectures": ["x86_64", "arm64"], "native_installer_test": "not run"}
+        results["macos"] = {"archive_checksums": "passed", "scripts_and_resources": "passed", "squirrel_unmodified": True, "mach_o_architectures": ["x86_64", "arm64"], "native_installer_test": "see reports/macos-cloud-verification.json" if (ROOT / "reports/macos-cloud-verification.json").exists() else "not run"}
     if (DIST / "NushuInput.apk").exists():
         native_hashes = {}
         with zipfile.ZipFile(DIST / "NushuInput.apk") as apk:
@@ -75,7 +81,7 @@ def verify():
                             assert apk.read(path) == original.read(path), f"Native library changed: {path}"
                             native_hashes[path] = hashlib.sha256(apk.read(path)).hexdigest()
             for schema in ["nushu.schema.yaml", "luna_pinyin_nushu.schema.yaml", "nushu.dict.yaml"]:
-                assert apk.read("assets/shared/" + schema) == (BUILD / "shared" / schema).read_bytes()
+                assert equivalent_text(apk.read("assets/shared/" + schema), (BUILD / "shared" / schema).read_bytes())
             assert apk.read("assets/shared/fonts/NotoSansNushu-Regular.ttf") == (BUILD / "fonts/NotoSansNushu-Regular.ttf").read_bytes()
         results["android"] = {"apk_zip_integrity": "passed", "native_abis": native_abis, "native_libraries_match_upstream_tag": True,
                               "native_library_sha256": native_hashes, "resources": "passed", "device_installation_test": "see verification record",

@@ -7,7 +7,7 @@
       "x86_64",
       "arm64"
     ],
-    "native_installer_test": "not run"
+    "native_installer_test": "see reports/macos-cloud-verification.json"
   },
   "android": {
     "apk_zip_integrity": "passed",
